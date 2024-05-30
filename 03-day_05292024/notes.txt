@@ -1,0 +1,103 @@
+# General Report
+## 2023
+
+#### 01 Authentication Attacks
+
+**MFA Fatigue Attack:** Also known as MFA bombing or MFA spamming, this type of social engineering cyberattack involves the attacker repeatedly sending MFA requests to the victim’s email, phone, or other registered devices.
+- **YouTube Video:** "MFA Attacks: Push Notification Fatigue Demonstration"
+- **Related Topics:** DDoS (Denial of Service), Jammer, Man-in-the-Middle attacks
+- **Key Point:** A well-trained user in social engineering should never grant access under such pressure.
+- **Automated Script:** Attackers may use scripts to automate this process continually.
+- **Error Blocking:** Even if the attacker enters the correct username and password, the user may be erroneously locked out after multiple failed attempts.
+
+**Cookie Hijacking:** A method by which attackers break into other websites to steal cookies. This allows them to:
+- Monitor the victim’s browsing activity
+- Log their keystrokes
+- Gain access to credit card information and passwords
+
+###### Steps Involved in Cookie Hijacking:
+1. Capture the cookie
+2. Access login.php
+3. Obtain action.php
+
+#### Authentication Attacks Summary:
+- **Quiz Time:** Understanding the techniques and prevention methods.
+- **Certification Challenges:** Certifications like ELGIA, MITRE, Sicons, CCNA, and CCNP are rigorous. Cisco’s CCNA and CCNP certifications, for example, do not allow any external materials during the exam.
+
+#### 02 Access Control
+
+**Access Control:** The broader concept of controlling access to resources and managing this access.
+
+###### Key Concepts:
+- **Least Privilege:** Granting users the minimum level of access necessary to perform their job.
+- **Need to Know:** Restricting access to only the information required for a job.
+- **Separation of Duties:** Splitting a task between two individuals to prevent any single individual from executing a critical action alone.
+- **Rotation of Duties:** Regularly rotating individuals through different jobs to minimize the risk of collusion.
+
+###### Access Control Techniques:
+- **DAC (Discretionary Access Control):** Users manage their access credentials, such as usernames and passwords.
+- **MAC (Mandatory Access Control):** System-enforced credentials that are nontransferable, ensuring users cannot pass their clearance to others.
+- **RBAC (Role-Based Access Control):** Assigns users to roles or groups based on organizational functions, granting permissions based on these roles.
+- **LAC (Lattice-Based Access Control):** Defines access restrictions based on security levels, allowing access if the user's security level is greater than or equal to the object's level.
+
+#### 03 Storing Passwords
+
+**Key Derivation Functions (KDF):** Techniques used to securely store passwords by deriving cryptographic keys from passwords, enhancing security against brute-force attacks.
+
+###### Additional Notes:
+- **User Training:** Users should be well-trained in recognizing and responding to social engineering attacks.
+- **Automated Security Measures:** Implementing scripts and tools to continually monitor and respond to authentication attempts can help prevent unauthorized access.
+
+#### Access Management
+Access management is the process by which access rights are managed by a team and requires four main tasks:
+
+###### Managing and Monitoring Access:
+- **Account Administration:** If someone from the finance team needs access, an authorized person provides this information to the access management team to register the user.
+- **Monitoring:** Regularly checking who has access to what resources.
+- **Revocation:** Removing access when it is no longer needed.
+- **Maintenance:** Ensuring access rights are up-to-date and secure.
+
+**Privileged Access:** Refers to access to a computer system with elevated rights, such as root or administrator access, or access to service accounts. As organizations grow, the number of privileged accounts increases, making it challenging to manage them properly.
+
+###### Challenges:
+- Proliferation of privileged accounts
+- Using identical passwords or generic user IDs
+- Sharing user accounts
+- Weakening account resilience to attacks
+
+###### PAM Tools (Privileged Access Management):
+- Provide transparency to the user
+- Act as a policy enforcement point
+- Generate strong shared secrets
+- Securely store credentials
+- Rotate credentials
+- Monitor and log privileged access
+- Generate reports
+
+**Active Directory:** Microsoft’s directory and identity management service for Windows domain networks. Introduced in Windows 2000, AD is like a phone book for your IT infrastructure and users. It verifies if someone has the right credentials (authentication) and determines what files or applications they can access based on their role or group membership (authorization).
+
+###### Group Policy Management:
+Allows administrators to implement specific configurations across multiple machines.
+
+#### 3-Tiered Privileged Access Management
+Users often log on as local administrators on their devices. If one of these devices is infected with malware, the attacker can use it to harvest credentials and move to other devices in the network.
+
+###### Preventing Lateral Movement:
+- Do not allow users to log in with administrative privileges.
+- Keep privileged groups in Active Directory as empty as possible.
+- **Tier 0:** Direct control of enterprise identities.
+- **Tier 1:** Control of enterprise servers and applications.
+- **Tier 2:** Control of user workstations and devices.
+
+#### Storing Passwords
+
+**Hashing:** A one-way transformation of a password, different from encryption (which is two-way), turning it into a unique string called a password hash. One-way means it’s practically impossible to reverse the hash to retrieve the original password.
+
+**Key Derivation Function (KDF):** Based on an irreversible hash function. A hash function takes an arbitrary amount of data as its input and calculates a fixed-length output value called a digest.
+
+###### Techniques:
+- **Salt and Pepper:** Adding random characters to each user's password to ensure unique hashes.
+- **SHA-256:** A specific hashing algorithm used for secure hashing.
+- **Difficult Factor:** KDF implements a so-called difficulty factor to enhance security.
+
+

@@ -1,0 +1,103 @@
+# Informe General
+## 2023
+
+#### 01 Ataques de Autenticación
+
+**Ataque de Fatiga MFA:** También conocido como bombardeo MFA o spam MFA, este tipo de ataque de ingeniería social implica que el atacante envíe repetidamente solicitudes MFA al correo electrónico, teléfono u otros dispositivos registrados de la víctima.
+- **Video de YouTube:** "MFA Attacks: Push Notification Fatigue Demonstration"
+- **Temas Relacionados:** DDoS (Denegación de Servicio), Interferidor, Ataques de Hombre en el Medio
+- **Punto Clave:** Un usuario bien entrenado en ingeniería social nunca debería conceder acceso bajo esta presión.
+- **Script Automatizado:** Los atacantes pueden usar scripts para automatizar este proceso continuamente.
+- **Bloqueo por Error:** Incluso si el atacante ingresa el nombre de usuario y la contraseña correctos, el usuario puede ser bloqueado erróneamente después de varios intentos fallidos.
+
+**Secuestro de Cookies:** Un método por el cual los atacantes irrumpen en otros sitios web para robar cookies. Esto les permite:
+- Monitorear la actividad de navegación de la víctima
+- Registrar sus pulsaciones de teclas
+- Acceder a información de tarjetas de crédito y contraseñas
+
+###### Pasos Involucrados en el Secuestro de Cookies:
+1. Capturar la cookie
+2. Acceder a login.php
+3. Obtener action.php
+
+#### Resumen de Ataques de Autenticación:
+- **Tiempo de Cuestionario:** Entender las técnicas y métodos de prevención.
+- **Desafíos de Certificación:** Certificaciones como ELGIA, MITRE, Sicons, CCNA y CCNP son rigurosas. Por ejemplo, las certificaciones CCNA y CCNP de Cisco no permiten ningún material externo durante el examen.
+
+#### 02 Control de Acceso
+
+**Control de Acceso:** El concepto más amplio de controlar el acceso a los recursos y gestionar este acceso.
+
+###### Conceptos Clave:
+- **Privilegio Mínimo:** Otorgar a los usuarios el nivel mínimo de acceso necesario para realizar su trabajo.
+- **Necesidad de Saber:** Restringir el acceso solo a la información necesaria para un trabajo.
+- **Separación de Funciones:** Dividir una tarea entre dos individuos para evitar que cualquier individuo ejecute una acción crítica solo.
+- **Rotación de Funciones:** Rotar regularmente a los individuos a través de diferentes trabajos para minimizar el riesgo de colusión.
+
+###### Técnicas de Control de Acceso:
+- **DAC (Control de Acceso Discrecional):** Los usuarios gestionan sus credenciales de acceso, como nombres de usuario y contraseñas.
+- **MAC (Control de Acceso Obligatorio):** Credenciales impuestas por el sistema que son intransferibles, asegurando que los usuarios no puedan pasar su autorización a otros.
+- **RBAC (Control de Acceso Basado en Roles):** Asigna a los usuarios roles o grupos basados en funciones organizacionales, otorgando permisos basados en estos roles.
+- **LAC (Control de Acceso Basado en Lattice):** Define restricciones de acceso basadas en niveles de seguridad, permitiendo el acceso si el nivel de seguridad del usuario es mayor o igual al del objeto.
+
+#### 03 Almacenamiento de Contraseñas
+
+**Funciones de Derivación de Claves (KDF):** Técnicas utilizadas para almacenar contraseñas de manera segura derivando claves criptográficas de las contraseñas, mejorando la seguridad contra ataques de fuerza bruta.
+
+###### Notas Adicionales:
+- **Capacitación de Usuarios:** Los usuarios deben estar bien entrenados para reconocer y responder a ataques de ingeniería social.
+- **Medidas de Seguridad Automatizadas:** Implementar scripts y herramientas para monitorear y responder continuamente a intentos de autenticación puede ayudar a prevenir el acceso no autorizado.
+
+#### Gestión de Acceso
+La gestión de acceso es el proceso por el cual los derechos de acceso son gestionados por un equipo y requiere de cuatro tareas principales:
+
+###### Gestión y Monitoreo del Acceso:
+- **Administración de Cuentas:** Si alguien del equipo de finanzas necesita acceso, una persona autorizada proporciona esta información al equipo de gestión de acceso para registrar al usuario.
+- **Monitoreo:** Verificación regular de quién tiene acceso a qué recursos.
+- **Revocación:** Eliminación del acceso cuando ya no es necesario.
+- **Mantenimiento:** Asegurar que los derechos de acceso estén actualizados y sean seguros.
+
+**Acceso Privilegiado:** Se refiere al acceso a un sistema informático con derechos elevados, como acceso de root o administrador, o acceso a cuentas de servicio. A medida que las organizaciones crecen, el número de cuentas privilegiadas aumenta, lo que dificulta su gestión adecuada.
+
+###### Desafíos:
+- Proliferación de cuentas privilegiadas
+- Uso de contraseñas idénticas o IDs de usuario genéricos
+- Compartir cuentas de usuario
+- Debilitar la resistencia de las cuentas a los ataques
+
+###### Herramientas PAM (Gestión de Acceso Privilegiado):
+- Proporcionar transparencia al usuario
+- Actuar como punto de aplicación de políticas
+- Generar secretos compartidos fuertes
+- Almacenar credenciales de manera segura
+- Rotar credenciales
+- Monitorear y registrar el acceso privilegiado
+- Generar informes
+
+**Active Directory:** El servicio de gestión de directorios e identidades de Microsoft para redes de dominios de Windows. Introducido en Windows 2000, AD es como una guía telefónica para su infraestructura de TI y usuarios. Verifica si alguien tiene las credenciales correctas (autenticación) y determina a qué archivos o aplicaciones pueden acceder según su rol o pertenencia a un grupo (autorización).
+
+###### Gestión de Políticas de Grupo:
+Permite a los administradores implementar configuraciones específicas en múltiples máquinas.
+
+#### Gestión de Acceso Privilegiado en 3 Niveles
+Los usuarios a menudo inician sesión como administradores locales en sus dispositivos. Si uno de estos dispositivos se infecta con malware, el atacante puede usarlo para obtener credenciales y moverse a otros dispositivos en la red.
+
+###### Prevención del Movimiento Lateral:
+- No permitir que los usuarios inicien sesión con privilegios administrativos.
+- Mantener los grupos privilegiados en Active Directory lo más vacíos posible.
+- **Nivel 0:** Control directo de las identidades empresariales.
+- **Nivel 1:** Control de los servidores y aplicaciones empresariales.
+- **Nivel 2:** Control de las estaciones de trabajo y dispositivos de los usuarios.
+
+#### Almacenamiento de Contraseñas
+
+**Hashing:** Una transformación unidireccional de una contraseña, diferente del cifrado (que es bidireccional), convirtiéndola en una cadena única llamada hash de contraseña. Unidireccional significa que es prácticamente imposible revertir el hash para recuperar la contraseña original.
+
+**Función de Derivación de Claves (KDF):** Basada en una función de hash irreversible. Una función de hash toma una cantidad arbitraria de datos como entrada y calcula un valor de salida de longitud fija llamado digest.
+
+###### Técnicas:
+- **Sal y Pimienta:** Agregar caracteres aleatorios a la contraseña de cada usuario para asegurar hashes únicos.
+- **SHA-256:** Un algoritmo de hashing específico utilizado para el hashing seguro.
+- **Factor de Dificultad:** KDF implementa un llamado factor de dificultad para mejorar la seguridad.
+
+

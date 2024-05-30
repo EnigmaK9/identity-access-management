@@ -1,0 +1,59 @@
+## 01 Definitions
+
+### Accountability
+Accountability is the process of identifying who did what on the system, as well as when they did it.
+
+### Just-in-Time Access (JIT)
+JIT access helps organizations provision access so that users only have the privileges to access privileged accounts and resources when they need it, and not at any other times.
+
+### Zero Standing Privileges (ZSP)
+ZSP is a security principle that advocates removing all persistent user privileges within an enterprise estate. Practically, zero standing privileges are a progression from the concept of just-in-time access.
+
+## Identity Access Management
+Identity management is the organizational process for identifying, authenticating, and authorizing individuals or groups of people to have access to applications, systems, or networks by associating user rights and restrictions with established identities.
+[Source](https://searchsecurity.com/)
+
+## 02 Authentication
+
+Authentication is a process in which a subject proves they are in possession of one or more valid authenticators associated with a subscribed identity. During authentication, the subject is referred to as the claimant. The validity of the authenticator is checked by the verifier.
+- The claimant presents their authenticator to the verifier.
+- The verifier checks the validity of the authenticators.
+- The verifier asserts the identity of the claimant.
+
+### Authenticator Assurance Levels (AAL)
+- **AAL1 (Some Confidence):** Requires either single-factor or multi-factor authentication using a wide range of available authentication technologies.
+- **AAL2 (High Confidence):** Proof of possession and control of two different authentication factors is required through secure authentication protocols. Approved cryptographic techniques are needed at AAL2 and above.
+- **AAL3 (Very High Confidence):** Requires a hardware-based authenticator and an authenticator that provides verifier impersonation resistance; the same device may fulfill both these requirements.
+
+### Single Sign-On (SSO)
+SSO allows a user to log in once with one set of credentials and use those credentials to access different resources. The XML-based protocol uses tokens to exchange identities. It uses tokens containing identity information to enable SSO in different environments.
+- SAML is for web applications.
+- OAuth 2.0 is an open standard for access delegation, used to grant websites or applications access to their information on other websites without exchanging passwords. In general, OAuth 2.0 provides secure delegated access and supports SSO.
+- OpenID Connect is an authentication user protocol. OAuth is not single sign-on; it is only a part of what OpenID Connect offers.
+
+## Authentication Types
+
+### Factores de autenticación
+- **Something You Know:** A secret value intended to be chosen and memorized by the user.
+- **Something You Have:** An authenticator can be any object only the authorized party possesses and can prove is in their possession.
+- **Something You Are:** Any provable characteristic that is unique to the authorized party, such as a fingerprint.
+
+### Look-Up Secrets
+A physical or electronic record that stores a set of secrets shared between the claimant and the CSP.
+
+### Out of Band Devices
+A physical device that is uniquely addressable and can communicate securely with the verifier over a distinct communications channel, referred to as the secondary channel.
+
+### One-Time Password (OTP)
+
+#### Single-Factor OTP
+These devices have an embedded secret that is used as the seed for the generation of OTPs and do not require activation through a second factor. The OTP is displayed on the device and manually input for transmission to the verifier, thereby proving possession and control of the device.
+
+#### Multifactor OTP
+A multifactor OTP device generates OTPs for use in authentication after activation through an additional authentication factor. This includes hardware devices and software-based OTP generators installed on devices such as mobile phones.
+
+### Single-Factor Cryptographic Devices
+A single-factor cryptographic device is a hardware device that performs cryptographic operations using protected cryptographic keys and provides the authenticator.
+
+## 03 Authentication Types
+
